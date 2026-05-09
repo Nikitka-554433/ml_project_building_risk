@@ -1,0 +1,48 @@
+# Данные и модели
+data/raw/
+data/processed/
+models/
+*.csv
+*.pkl
+*.parquet
+
+# DVC
+.dvc/
+.dvc/cache
+.dvc/tmp
+.dvc/config.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Секреты и конфиги
+.env
+*.key
+*.pem
+
+# Логи
+logs/
+*.log
+
+# Отчёты и временные файлы
+reports/*.html
+*.tmp
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
