@@ -127,3 +127,33 @@ AUC-ROC(дополнительно F1-Score).
 - src/ — код для обработки, обучения, API;
 - models/ — сохранённые модели;
 - reports/ — отчёты и визуализации.
+
+## Запуск сервиса
+
+### Локально
+```bash
+# Установка зависимостей
+pip install -r requirements.txt
+
+# Запуск API
+uvicorn src.api.app:app --reload
+
+# Запуск интерфейса (в другом терминале)
+streamlit run frontend/streamlit_app.py
+```
+
+### Через Docker
+```bash
+docker build -t construction-predictor .
+docker run -p 8000:8000 construction-predictor
+```
+
+### Тесты
+```bash
+pytest tests/ -v
+```
+
+### Эндпоинты
+- `POST /predict` — прогноз стоимости
+- `GET /health` — проверка статуса
+- `GET /history` — история запросов
