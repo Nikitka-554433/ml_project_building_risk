@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+streamlit
+pytest
+gunicorn
+joblib
+pandas
+scikit-learn
+xgboost
+mlflow
+dvc
+numpy
+pydantic
+python-multipart
+fcntl
