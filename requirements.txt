@@ -13,3 +13,4 @@ numpy
 pydantic
 python-multipart
 fcntl
+category_encoders
