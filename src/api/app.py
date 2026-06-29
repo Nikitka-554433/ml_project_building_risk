@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="Construction Cost Predictor")
 
 # Путь к новой модели
-MODEL_PATH = "models/ensemble_model.pkl"
+MODEL_PATH = "models/best_cat_model.pkl"
 model = None
 
 @app.on_event("startup")
@@ -28,7 +28,7 @@ def startup():
         logger.error(f"Модель не найдена: {MODEL_PATH}")
         raise RuntimeError(f"Модель не найдена: {MODEL_PATH}")
     model = joblib.load(MODEL_PATH)
-    logger.info("Ensemble модель загружена успешно")
+    logger.info("CatBoost модель загружена успешно")
 
 @app.post("/predict", response_model=PredictionResult)
 async def predict(params: ProjectParams):
@@ -84,7 +84,7 @@ async def predict(params: ProjectParams):
         pred = model.predict(df)[0]
         
         # Обратное преобразование (если модель обучалась с log1p)
-        pred = np.expm1(pred) * 1_000
+        pred = np.expm1(pred)
         
         # Сохраняем предсказание в БД
         pred_id = save_prediction(params.dict(), float(pred))

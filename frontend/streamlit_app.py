@@ -108,7 +108,7 @@ with tab2:
         if valid_t:
             periods_v, prices_t_v = zip(*valid_t)
             fig2, ax2 = plt.subplots(figsize=(6, 3))
-            ax2.plot(periods_v, prices_t_v, marker='s', linestyle='-', color='green')
+            ax2.plot(periods_v, prices_t_v, marker='s', linestyle='-', color='pink')
             ax2.set_xlabel('Срок строительства (мес.)')
             ax2.set_ylabel('Стоимость (руб.)')
             ax2.grid(True)
@@ -136,7 +136,7 @@ with tab2:
         if valid_m:
             names_m, prices_m = zip(*valid_m)
             fig3, ax3 = plt.subplots(figsize=(5, 3))
-            ax3.bar(names_m, prices_m, color=['#1f77b4', '#ff7f0e', '#2ca02c'])
+            ax3.bar(names_m, prices_m, color=['#1f77b4', '#ff7f0e', "#ec11a0"])
             ax3.set_xlabel('Материал стен')
             ax3.set_ylabel('Стоимость (руб.)')
             ax3.grid(True, axis='y')
